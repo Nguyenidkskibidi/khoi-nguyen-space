@@ -13,8 +13,8 @@ const Skills = () => {
   ];
 
   const programming = [
-    { name: "JavaScript", logo: javascriptLogo, description: "Nah I just can code a simple website, so don't tell me like that" },
-    { name: "TypeScript", logo: typescriptLogo, description: "Nuh uh, I give this to you, JavaScript" },
+    { name: "JavaScript", logo: javascriptLogo, description: "Nah I just can code a simple website, so don't tell me like that", link: "https://wikipedia.org/wiki/JavaScript" },
+    { name: "TypeScript", logo: typescriptLogo, description: "Nuh uh, I give this to you, JavaScript", link: "https://en.wikipedia.org/wiki/TypeScript" },
   ];
 
   return (
@@ -64,27 +64,30 @@ const Skills = () => {
             </div>
             <div className="space-y-4 relative z-10">
               {programming.map((lang, index) => (
-                <div
+                <a
                   key={lang.name}
-                  className={`group relative p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-all overflow-hidden scroll-reveal-right ${sectionRevealed ? 'revealed' : ''}`}
+                  href={lang.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-all duration-500 overflow-hidden scroll-reveal-right block cursor-pointer hover:shadow-lg hover:-translate-y-1 ${sectionRevealed ? 'revealed' : ''}`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <img 
                           src={lang.logo} 
                           alt={`${lang.name} logo`} 
-                          className="w-8 h-8 object-contain transition-transform group-hover:scale-110 group-hover:rotate-6"
+                          className="w-8 h-8 object-contain transition-all duration-500 group-hover:scale-125 group-hover:rotate-12"
                         />
-                        <span className="font-semibold">{lang.name}</span>
+                        <span className="font-semibold transition-colors group-hover:text-primary">{lang.name}</span>
                       </div>
-                      <span className="text-xs px-3 py-1 bg-card rounded-full">Learning</span>
+                      <span className="text-xs px-3 py-1 bg-card rounded-full transition-all duration-300 group-hover:bg-primary/20 group-hover:scale-110">Learning</span>
                     </div>
-                    <p className="text-sm text-muted-foreground italic pl-11">{lang.description}</p>
+                    <p className="text-sm text-muted-foreground italic pl-11 transition-colors group-hover:text-foreground">{lang.description}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </Card>

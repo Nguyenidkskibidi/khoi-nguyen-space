@@ -38,13 +38,18 @@ const handler = async (req: Request): Promise<Response> => {
         reply_to: email,
         subject: `Portfolio Contact from ${name}`,
         html: `
-          <h1>New Contact Form Submission</h1>
-          <p><strong>From:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message}</p>
-          <hr>
-          <p><small>This message was sent from your portfolio contact form.</small></p>
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h1 style="color: #33b5e5;">✨ New Contact Form Submission! :D</h1>
+            <p><strong>From:</strong> ${name} :)</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Message:</strong></p>
+            <p style="background: #f5f5f5; padding: 15px; border-radius: 8px;">${message}</p>
+            <hr style="border: none; border-top: 2px solid #e0e0e0; margin: 20px 0;">
+            <p style="color: #666; font-size: 14px;">
+              <em>Pls don't message me at 3AM pls... 🙏</em><br>
+              <small>This message was sent from your portfolio contact form :)</small>
+            </p>
+          </div>
         `,
       }),
     });

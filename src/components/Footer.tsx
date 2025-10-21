@@ -17,6 +17,7 @@ const Footer = () => {
               khoinguyennguyen683@gmail.com
             </a>
             <span>Made with React & TypeScript</span>
+            <span className="text-xs italic">Pls don't message me at 3AM pls... 🙏</span>
           </div>
         </div>
       </div>

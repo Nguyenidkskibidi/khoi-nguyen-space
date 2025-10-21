@@ -55,14 +55,15 @@ const About = () => {
           <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-lg" style={{ background: 'var(--gradient-card)' }} />
           <p className="text-base md:text-lg leading-relaxed text-center md:text-left relative z-10">
             Hello! I'm <span className="font-bold text-primary">Nguyễn Khôi Nguyên</span>, 
-            a 12-year-old student at Đặng Tấn Tài Secondary School in Vietnam. 
-            I'm passionate about technology and programming, currently learning{" "}
+            a "skbidi toilet ohio" 12-year-old student at Đặng Tấn Tài Secondary School in Vietnam. 
+            I'm passionate about technology and programming (uhh, i like it when i'm 5 years old hehe :) ), 
+            now i'm currently learning{" "}
             <span className="font-semibold text-accent">JavaScript</span> and{" "}
             <span className="font-semibold text-accent">TypeScript</span>. 
-            I'm fluent in both Vietnamese and English, which helps me access a wide range of 
-            learning resources. When I'm not coding, I love watching anime, especially 
-            Doraemon and Mahiro from Onimai. I believe in continuous learning and 
-            I'm excited about building cool projects in the future!
+            I can speak in both Vietnamese and now i'm just learning English, which helps me access a wide range of 
+            learning resources (nvm, i'm bad at these). When I'm not coding, I love watching anime 
+            (nuh uh don't trust him), especially Doraemon and Mahiro from Onimai. I believe in continuous learning and 
+            I'm excited about building cool projects in the future and i hope i can complete all i want before GTA 6 hehe :).
           </p>
         </Card>
       </div>

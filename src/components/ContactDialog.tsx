@@ -68,8 +68,9 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           <DialogTitle className="text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Contact Me
           </DialogTitle>
-          <DialogDescription>
-            Send me a message and I'll get back to you as soon as possible!
+          <DialogDescription className="space-y-1">
+            <p>Send me a message and I'll get back to you as soon as possible! :D</p>
+            <p className="text-xs italic text-muted-foreground">Pls don't message me at 3AM pls... 🙏</p>
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">

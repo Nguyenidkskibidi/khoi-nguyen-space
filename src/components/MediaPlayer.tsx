@@ -16,7 +16,11 @@ const MediaPlayer = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const audioRef = useRef<HTMLAudioElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -71,13 +75,62 @@ const MediaPlayer = () => {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      setDragOffset({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+      setIsDragging(true);
+    }
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isDragging) {
+        setPosition({
+          x: e.clientX - dragOffset.x,
+          y: e.clientY - dragOffset.y,
+        });
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging, dragOffset]);
+
   return (
-    <Card className="fixed bottom-4 right-4 z-50 p-4 w-80 backdrop-blur-md bg-card/95 border-2 border-primary/30 hover:border-primary/60 transition-all duration-500 hover-lift shadow-xl group">
+    <Card 
+      ref={cardRef}
+      className="fixed z-50 p-4 w-80 backdrop-blur-md bg-card/95 border-2 border-primary/30 hover:border-primary/60 transition-all duration-500 hover-lift shadow-xl group"
+      style={{
+        left: position.x ? `${position.x}px` : 'auto',
+        top: position.y ? `${position.y}px` : 'auto',
+        right: position.x ? 'auto' : '1rem',
+        bottom: position.y ? 'auto' : '1rem',
+        cursor: isDragging ? 'grabbing' : 'grab',
+      }}
+    >
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" style={{ background: 'var(--gradient-card)' }} />
       
       <div className="relative z-10 space-y-3">
         {/* Header */}
-        <div className="flex items-center gap-2 mb-2">
+        <div 
+          className="flex items-center gap-2 mb-2 cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+        >
           <div className="p-2 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg animate-pulse">
             <Music className="w-4 h-4 text-primary" />
           </div>

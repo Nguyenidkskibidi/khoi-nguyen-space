@@ -3,10 +3,15 @@ import { Play, Pause, SkipForward, Volume2, VolumeX, Music, Sparkles } from "luc
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import onimaiAlbum from "@/assets/onimai-album.jpeg";
+import foundAlbum from "@/assets/until-i-found-you-album.png";
+import pasilyoAlbum from "@/assets/pasilyo-album.png";
 
 const tracks = [
-  { name: "Opening", url: "/audio/opening.mp3" },
-  { name: "Ending", url: "/audio/ending.mp3" },
+  { name: "Opening", artist: "Onimai Soundtrack", url: "/audio/opening.mp3", album: onimaiAlbum },
+  { name: "Ending", artist: "Onimai Soundtrack", url: "/audio/ending.mp3", album: onimaiAlbum },
+  { name: "Until I Found You", artist: "Stephen Sanchez", url: "/audio/until-i-found-you.mp3", album: foundAlbum },
+  { name: "Pasilyo", artist: "SunKissed Lola", url: "/audio/pasilyo.mp3", album: pasilyoAlbum },
 ];
 
 const MediaPlayer = () => {
@@ -126,20 +131,25 @@ const MediaPlayer = () => {
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" style={{ background: 'var(--gradient-card)' }} />
       
       <div className="relative z-10 space-y-3">
-        {/* Header */}
+        {/* Header with Album Cover */}
         <div 
-          className="flex items-center gap-2 mb-2 cursor-grab active:cursor-grabbing"
+          className="flex items-center gap-3 mb-2 cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
         >
-          <div className="p-2 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg animate-pulse">
-            <Music className="w-4 h-4 text-primary" />
+          <div className="relative group">
+            <img 
+              src={tracks[currentTrack].album} 
+              alt={`${tracks[currentTrack].name} album cover`}
+              className="w-14 h-14 rounded-lg object-cover shadow-lg group-hover:scale-105 transition-transform duration-300 ring-2 ring-primary/30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-sm flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-accent animate-pulse" />
-              {tracks[currentTrack].name}
+          <div className="flex-1 min-w-0">
+            <h3 className="font-semibold text-sm flex items-center gap-1 truncate">
+              <Sparkles className="w-3 h-3 text-accent animate-pulse flex-shrink-0" />
+              <span className="truncate">{tracks[currentTrack].name}</span>
             </h3>
-            <p className="text-xs text-muted-foreground">Onimai Soundtrack</p>
+            <p className="text-xs text-muted-foreground truncate">{tracks[currentTrack].artist}</p>
           </div>
         </div>
 

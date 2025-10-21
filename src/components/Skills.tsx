@@ -3,18 +3,20 @@ import { Code2, Languages, Sparkles } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import javascriptLogo from "@/assets/javascript-logo.png";
 import typescriptLogo from "@/assets/typescript-logo.png";
+import javaLogo from "@/assets/java-logo.svg";
 
 const Skills = () => {
   const { ref: sectionRef, isRevealed: sectionRevealed } = useScrollReveal();
   
   const languages = [
     { name: "Vietnamese", level: "Native", flag: "🇻🇳" },
-    { name: "English", level: "Intermediate", flag: "🇬🇧" },
+    { name: "English", level: "IDK, i think it's great?", flag: "🇬🇧" },
   ];
 
   const programming = [
     { name: "JavaScript", logo: javascriptLogo, description: "Nah I just can code a simple website, so don't tell me like that", link: "https://wikipedia.org/wiki/JavaScript" },
     { name: "TypeScript", logo: typescriptLogo, description: "Nuh uh, I give this to you, JavaScript", link: "https://en.wikipedia.org/wiki/TypeScript" },
+    { name: "Java", logo: javaLogo, description: "Lmao i use that to code Android app :))", link: "https://en.wikipedia.org/wiki/Java_(programming_language)" },
   ];
 
   return (

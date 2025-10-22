@@ -105,81 +105,135 @@ const About = () => {
               in{" "}
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="text-primary cursor-help border-b border-dotted border-primary">
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Vietnam" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary cursor-pointer border-b border-dotted border-primary hover:text-accent transition-colors duration-300"
+                  >
                     Vietnam
-                  </span>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent className="max-w-xs">
                   <p>🇻🇳 Vietnam is a Southeast Asian nation celebrated for its vibrant culture, long history, stunning landscapes, and remarkable transformation from a war-torn past to one of Asia's fastest-growing economies.</p>
                 </TooltipContent>
-              </Tooltip>. 
+              </Tooltip>.
               I'm passionate about{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/Technology" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                technology
-              </a>{" "}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Technology" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    technology
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Technology is the application of conceptual knowledge to achieve practical goals, especially in a reproducible way. It includes everything from simple tools to complex systems that shape our modern world.</p>
+                </TooltipContent>
+              </Tooltip>{" "}
               and programming (uhh, i like it when i'm 5 years old hehe :) ), 
               now i'm currently learning{" "}
               <span className="font-semibold text-accent">JavaScript</span> and{" "}
               <span className="font-semibold text-accent">TypeScript</span>. 
               I can speak in both{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/Vietnamese_language" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                Vietnamese
-              </a>{" "}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Vietnamese_language" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    Vietnamese
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Vietnamese is an Austroasiatic language spoken by around 95 million people, primarily in Vietnam. It's known for its tonal system and use of the Latin alphabet with additional diacritics.</p>
+                </TooltipContent>
+              </Tooltip>{" "}
               and now i'm just learning{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/English_language" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                English
-              </a>, which helps me access a wide range of 
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/English_language" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    English
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>English is a West Germanic language that originated in England and is now one of the most widely spoken languages worldwide, serving as a global lingua franca for business, science, and technology.</p>
+                </TooltipContent>
+              </Tooltip>, which helps me access a wide range of 
               learning resources (nvm, i'm bad at these). When I'm not coding, I love watching{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/Anime" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                anime
-              </a>{" "}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Anime" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    anime
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Anime is a style of Japanese animation characterized by vibrant characters, fantastical themes, and colorful graphics. It has become a global phenomenon with millions of fans worldwide.</p>
+                </TooltipContent>
+              </Tooltip>{" "}
               (nuh uh don't trust him), especially{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/Doraemon" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                Doraemon
-              </a>{" "}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Doraemon" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    Doraemon
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Doraemon is a beloved Japanese manga and anime series about a robotic cat from the future who travels back in time to help a boy named Nobita with gadgets from his 4D pocket.</p>
+                </TooltipContent>
+              </Tooltip>{" "}
               and{" "}
-              <a 
-                href="https://oniichan-wa-oshimai.fandom.com/wiki/Mahiro_Oyama" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                Mahiro
-              </a>{" "}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://oniichan-wa-oshimai.fandom.com/wiki/Mahiro_Oyama" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    Mahiro
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Mahiro Oyama is the main protagonist of Onimai, a former shut-in who wakes up transformed into a middle school girl after his scientist sister's experiment.</p>
+                </TooltipContent>
+              </Tooltip>{" "}
               from{" "}
-              <a 
-                href="https://en.wikipedia.org/wiki/Onimai" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer"
-              >
-                Onimai
-              </a>. I believe in continuous learning and
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Onimai" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors duration-300 hover:underline cursor-pointer border-b border-dotted border-primary"
+                  >
+                    Onimai
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <p>Onimai: I'm Now Your Sister! is a Japanese manga and anime series about a NEET who is transformed into a girl by his scientist sister, exploring themes of personal growth and daily life.</p>
+                </TooltipContent>
+              </Tooltip>. I believe in continuous learning and
               I'm excited about building cool projects in the future and i hope i can complete all i want before{" "}
               <Tooltip>
                 <TooltipTrigger asChild>

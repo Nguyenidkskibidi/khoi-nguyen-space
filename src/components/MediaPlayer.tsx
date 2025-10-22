@@ -52,7 +52,7 @@ const MediaPlayer = () => {
         audioRef.current.play();
         setIsPlaying(true);
       }
-    }, 100);
+    }, 10);
   };
 
   const handleTimeUpdate = () => {

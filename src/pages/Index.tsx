@@ -5,14 +5,14 @@ import Projects from "@/components/Projects";
 import Hobbies from "@/components/Hobbies";
 import Footer from "@/components/Footer";
 import FloatingCharacters from "@/components/FloatingCharacters";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeCustomizer from "@/components/ThemeCustomizer";
 import MediaPlayer from "@/components/MediaPlayer";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
       <FloatingCharacters />
-      <ThemeToggle />
+      <ThemeCustomizer />
       <MediaPlayer />
       <div className="relative z-10">
         <Hero />
